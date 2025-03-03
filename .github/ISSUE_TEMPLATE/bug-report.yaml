@@ -1,93 +1,84 @@
 name: New Bug Report
 description: File a bug report
-title: "Product Area: Short description of bug"
+title: "Short description of bug"
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thank you for reporting this issue! We will look into it and respond as soon as possible.
 
-        Please try to give your issue a good title. Try using the product-area where you are having an issue and a brief description of the problem. Like this:
-        - `Dashboards: Template Variables break when I do X` or
-        - `Alerting: message templating plus Slack channel breaks when I do X`
+        Please try to give your issue a good title.
+
   - type: markdown
     attributes:
       value: |
-        **HINT:** Have you tried [searching](https://github.com/grafana/grafana/issues) for similar issues? Duplicate issues are common.
+        #
 
-        **Are you reporting a security vulnerability?** [Submit it here instead](https://github.com/grafana/grafana/security/policy).
-  - type: markdown
-    attributes:
-      value: |
-       #
-
-  - type: textarea
+  - type: Summary
     attributes:
       label: What happened?
-      description: "**Hot Tip:** Record your screen and attach it here."
-    validations:
-      required: true
-
-  - type: textarea
-    attributes:
-      label: What did you expect to happen?
-    validations:
-      required: true
-
-  - type: textarea
-    attributes:
-      label: Did this work before?
-      description: "If this worked before, what Grafana version worked correctly?"
+      description: "**Hot Tip:** A clear and concise description of the bug (e.g., 'Dashboard crashes when selecting XYZ option'). Record your screen and attach it here."
     validations:
       required: true
 
   - type: textarea
     attributes:
       label: How do we reproduce it?
+      description: "Provide detailed steps to replicate the issue. **Hot Tip:** Attach a screen recording, screenshot, or log file (use ``` for logs) to illustrate the issue."
       placeholder: "Steps to reproduce..."
       value: |
-        1.
-        2.
-        3.
+        1. [e.g., Go to the Dashboards page]
+        2. [e.g., Click the XYZ button]
+        3. [e.g., Select option ABC]
     validations:
       required: true
 
   - type: textarea
     attributes:
-      label: Is the bug inside a dashboard panel?
-      description: |
-        If the bug appears inside a [dashboard panel](https://grafana.com/docs/grafana/latest/panels-visualizations/#panels-and-visualizations), please use the ["Get help" feature](https://grafana.com/docs/grafana/latest/troubleshooting/send-panel-to-grafana-support/). Select **Copy to clipboard** and paste the data below.
+      label: Expected Result
+      description: "Describe what you expected to happen (e.g., The dashboard should load without errors)."
+    validations:
+      required: true
 
   - type: textarea
     attributes:
-      label: Environment (with versions)?
-      description: |
-        [How do I find my Grafana version info?](https://community.grafana.com/t/how-to-find-your-grafana-version-info-3-different-ways/86857)
-      placeholder: "Grafana, OS, and Browser versions..."
+      label: Actual Result
+      description: "Describe what actually happened."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Environment
+      description: "Details about your setup."
       value: |
-        Grafana:
-        OS:
-        Browser:
+        1. **Plugin Version**: [e.g., 2.5.0]
+        2. **Grafana Version:** [e.g., 11.0.0]
+        3. **Datasource(s):** [e.g., Prometheus, MySQL]
+        4. **Operating System:** [e.g., Ubuntu 20.04] (optional)
+        5. **Browser:** [e.g., Chrome 120] (optional)
     validations:
-      required: false
+      required: true
 
-  - type: dropdown
+  - type: checkboxes
     attributes:
-      label: Grafana platform?
-      description: How are you running/deploying Grafana?
+      label: "Did this work before?"
       options:
-        - I use Grafana Cloud
-        - Docker
-        - Kubernetes
-        - A package manager (APT, YUM, BREW, etc.)
-        - A downloaded binary
-        - Other
-        - I don't know
+        - label: "Yes"
+          required: false
+        - label: "No"
+          required: false
+
+  - type: textarea
+    attributes:
+      label: Details if this work before.
+      description: "Specify the Grafana and plugin versions where it worked"
     validations:
       required: false
 
-  - type: input
+  - type: textarea
     attributes:
-      label: Datasource(s)?
-      description: "Is this issue specific to a datasource plugin? (Please list all that apply)"
-      placeholder: "ex. Elasticsearch 5.0.0 or Infinity 1.4.1 ..."
+      label: Additional Context (Optional).
+      description: "Any extra details that might help, such as: Recent changes (e.g., upgrades, config edits), Frequency of the issue (e.g., always, intermittent)."
+    validations:
+      required: false
