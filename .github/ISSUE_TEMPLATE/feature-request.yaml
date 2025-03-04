@@ -24,7 +24,9 @@ body:
   - type: textarea
     attributes:
       label: What Would You Like to Be Added?
-      description: Provide a clear and concise description of the feature or enhancement."
-      placeholder: "Steps to reproduce..."
+      description: "Provide a clear and concise description of the feature or enhancement."
+      placeholder: |
+        - What should it do?
+        - Include any specific functionality or behavior you envision (e.g., new UI element, API support).
     validations:
       required: true
